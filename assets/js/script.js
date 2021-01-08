@@ -2,10 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 
 // Arrays for each option user can choos for thier password
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", ";", "<", ">", "?", "/"];
+var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
+var numeric = ["0123456789"];
+var specialChar = ["~!@#$%^&*()_+-={}|[];<>?/"];
 var userInput = [""];
 var userPassword = "";
 
@@ -18,31 +18,30 @@ function generatePassword() {
   while (userLength < 8 || userLength > 128) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
+
+  // Validates user response is a number
   while (isNaN(userLength)) {
     var userLength = prompt("Please choose a number between 8 and 128");
-  }
-  if (userLength > 8 || userLength < 128) {
-    userInput += userLength;
   }
 
   // Follow block of codes confirms what characters user wants to include in password
   var userInputUpper = confirm("Would you like your password to contain upper case letter?");
-  if (userInputUpper === true) {
+  if (userInputUpper) {
     userInput += upperCase;
   }
 
   var userInputLower = confirm("Would you like your password to contain lower case letters?");
-  if (userInputLower === true) {
+  if (userInputLower) {
     userInput += lowerCase;
   }
 
   var userInputNum = confirm("Would you like your password to contain numbers?");
-  if (userInputNum === true) {
+  if (userInputNum) {
     userInput += numeric;
   }
 
   var userInputSpec = confirm("Would you like your password to contain special characters?");
-  if (userInputSpec === true) {
+  if (userInputSpec) {
     userInput += specialChar;
   }
 
