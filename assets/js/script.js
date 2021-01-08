@@ -15,7 +15,7 @@ function generatePassword() {
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
 
   // Validates user response is less than more than 8 and less than 128
-  if (userLength < 8 || userLength > 128) {
+  while (userLength < 8 || userLength > 128) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
   if (userLength > 8 || userLength < 128) {
