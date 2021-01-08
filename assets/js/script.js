@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Arrays for each option user can choos for thier password
 var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
-var numeric = ["0123456789"];
+var numeric = ["01234567890123456789"];
 var specialChar = ["~!@#$%^&*()_+-={}|[];<>?/"];
 var userInput = [""];
 var userPassword = "";
@@ -19,8 +19,10 @@ function generatePassword() {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
 
+  var userLePar = parseInt(userLength);
+
   // Validates user response is a number
-  while (isNaN(userLength)) {
+  while (Number.isNaN(userLePar)) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
 
@@ -45,7 +47,7 @@ function generatePassword() {
     userInput += specialChar;
   }
 
-  // Validates that user chose at least one character type
+  // Validates that user chose at least one character
   if (userInputUpper === false && userInputLower === false && userInputNum === false && userInputSpec === false) {
     alert("must choose at least one character type")
   }
