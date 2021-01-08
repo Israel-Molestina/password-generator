@@ -6,7 +6,7 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", ";", "<", ">", "?", "/"];
-var userInput = "";
+var userInput = [""];
 
 function generatePassword() {
 
@@ -14,28 +14,28 @@ function generatePassword() {
   if (userLength < 8 || userLength > 128) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
-  else (userLength > 8 || userLength < 128) {
-    userLength.concat(userInput);
+  if (userLength > 8 || userLength < 128) {
+    userInput += userLength;
   }
 
   var userInputUpper = confirm("Would you like your password to contain upper case letter?");
   if (userInputUpper === true) {
-    userInputUpper.concat(userInput);
+    userInput += upperCase;
   }
 
   var userInputLower = confirm("Would you like your password to contain lower case letters?");
   if (userInputLower === true) {
-    userInputLower.concat(userInput);
+    userInput += lowerCase;
   }
 
   var userInputNum = confirm("Would you like your password to contain numbers?");
   if (userInputNum === true) {
-    userInputNum.concat(userInput);
+    userInput += numeric;
   }
 
   var userInputSpec = confirm("Would you like your password to contain special characters?");
   if (userInputSpec === true) {
-    userInputSpec.concat(userInput);
+    userInput += specialChar;
   }
 
 
