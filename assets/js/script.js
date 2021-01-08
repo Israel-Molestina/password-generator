@@ -1,6 +1,23 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
+
+if (userLength < 8 || userLength > 128) {
+  var userLength = prompt("Please choose a number between 8 and 128");
+}
+
+if (userLength > 8 && userLength < 128) {
+  var userInputUpper = confirm("Would you like your password to contain upper case letter?");
+  var userInputLower = confirm("Would you like your password to contain lower case letters?");
+  var userInputNum = confirm("Would you like your password to contain numbers?");
+  var userInputSpec = confirm("Would you like your password to contain special characters?");
+}
+
+if (userInputUpper !== true && userInputLower !== true && userInputNum !== true && userInputSpec !== true) {
+  alert("You must select at least one character type")
+}
+/*
 // variables for possible pasword characthers
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = upperCase.toLowerCase();
@@ -46,7 +63,7 @@ function generatePassword() {
   }
   return passwordText;
 }
-
+*/
 /*document.getElementById("generate").addEventListener("click", alert("my alert"));*/
 
 /*generateBtn.addEventListener("click", alert("im an alert"));*/
