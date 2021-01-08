@@ -7,10 +7,14 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", ";", "<", ">", "?", "/"];
 var userInput = [""];
+var userPassword = "";
 
 function generatePassword() {
 
+  // Asks what length user wants the passwords and adds to userInput
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
+
+  // Validates user response is less than more than 8 and less than 128
   if (userLength < 8 || userLength > 128) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
@@ -18,6 +22,7 @@ function generatePassword() {
     userInput += userLength;
   }
 
+  // Follow block of codes confirms what characters user wants to include in password
   var userInputUpper = confirm("Would you like your password to contain upper case letter?");
   if (userInputUpper === true) {
     userInput += upperCase;
@@ -36,6 +41,10 @@ function generatePassword() {
   var userInputSpec = confirm("Would you like your password to contain special characters?");
   if (userInputSpec === true) {
     userInput += specialChar;
+  }
+
+  for (var i =0; i < userLength; ++i) {
+    userPassword += userInput.charAt(Math.floor(Math.random() * userInput.length));
   }
 
 
