@@ -24,7 +24,7 @@ function generatePassword() {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
 
-  // Follow block of codes confirms what characters user wants to include in password
+  // Following block of codes confirms what characters user wants to include in password
   var userInputUpper = confirm("Would you like your password to contain upper case letter?");
   if (userInputUpper) {
     userInput += upperCase;
@@ -45,6 +45,11 @@ function generatePassword() {
     userInput += specialChar;
   }
 
+  // Validates that user chose at least one character type
+  if (userInputUpper === false && userInputLower === false && userInputNum === false && userInputSpec === false) {
+    alert("must choose at least one character type")
+  }
+  
   // for loop that chooses random characters in the arrays user chose
   for (var i =0; i < userLength; ++i) {
     userPassword += userInput.charAt(Math.floor(Math.random() * userInput.length));
