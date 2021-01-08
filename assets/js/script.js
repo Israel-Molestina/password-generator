@@ -18,6 +18,9 @@ function generatePassword() {
   while (userLength < 8 || userLength > 128) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
+  while (isNaN(userLength)) {
+    var userLength = prompt("Please choose a number between 8 and 128");
+  }
   if (userLength > 8 || userLength < 128) {
     userInput += userLength;
   }
