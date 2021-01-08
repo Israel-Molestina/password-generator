@@ -43,10 +43,12 @@ function generatePassword() {
     userInput += specialChar;
   }
 
+  // for loop that chooses random characters in the arrays user chose
   for (var i =0; i < userLength; ++i) {
     userPassword += userInput.charAt(Math.floor(Math.random() * userInput.length));
   }
 
+  return userPassword
 
 }
 
