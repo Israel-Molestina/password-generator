@@ -26,7 +26,7 @@ function generatePassword() {
     return userPassword = ""
   }
  
-  // Following block of codes confirms what characters user wants to include in password
+  // Following block of codes confirms what characters user wants to include in password, and if confirms concatanates it to the variable userInput
   else {
     var userInputUpper = confirm("Would you like your password to contain upper case letter?");
     if (userInputUpper) {
@@ -48,7 +48,7 @@ function generatePassword() {
       userInput = userInput.concat(specialChar);
     }
   
-    // Validates that user chose at least one character
+    // Validates that user chose at least one character type
     if (userInputUpper === false && userInputLower === false && userInputNum === false && userInputSpec === false) {
       alert("must choose at least one character type")
       return userPassword = ""
@@ -66,6 +66,7 @@ function generatePassword() {
     console.log(userPassword);
   }
 
+  // Returns user generated password
   return userPassword;
 
 }
