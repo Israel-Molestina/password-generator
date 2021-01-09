@@ -57,7 +57,7 @@ function generatePassword() {
   }
 
   // for loop that chooses random characters in the arrays user chose
-  for (var i =0; i < userLength; ++i) {
+  for (var i =0; i < userLength; i++) {
     var index = Math.floor(Math.random() * userInput.length);
     userPassword += userInput[index] + "";
 
