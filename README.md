@@ -17,7 +17,7 @@ When user confirms all criteria, a random password will be generated and will sh
 
 ## Below I've icluded a link to the finsihed application along with a screenshot of the page
 
-###[Password Generator](https://israel-molestina.github.io/password-generator/)
+### [Password Generator](https://israel-molestina.github.io/password-generator/)
 
 
 
