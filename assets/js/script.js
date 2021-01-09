@@ -15,14 +15,16 @@ function generatePassword() {
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
   var userLePar = parseInt(userLength);
   // Validates user response is less than more than 8 and less than 128
-  if (userLength < 8 || userLength > 128) {
-    var userLength = prompt("Please choose a number between 8 and 128");
+  if (Number.isNaN(userLePar) || userLength < 8 || userLength > 128) {
+    alert("I said number between 8 and 128")
   }
-
+  /*
   else if  (Number.isNaN(userLePar)) {
     var userLength = prompt("Please choose a number between 8 and 128");
   }
-  else if (userLength >= 8 && userLength <= 128) {
+  */
+ // Following block of codes confirms what characters user wants to include in password
+  else {
     var userInputUpper = confirm("Would you like your password to contain upper case letter?");
     if (userInputUpper) {
       userInput = userInput.concat(upperCase);
@@ -46,24 +48,10 @@ function generatePassword() {
     // Validates that user chose at least one character
     if (userInputUpper === false && userInputLower === false && userInputNum === false && userInputSpec === false) {
       alert("must choose at least one character type")
-      return userPassword = ""
+      return userPassword
     }
   }
 
-  else {
-    return userPassword = ""
-  }
-
-  
-  /*
-  // Validates user response is a number
-  while (Number.isNaN(userLePar)) {
-    var userLength = prompt("Please choose a number between 8 and 128");
-  }*/
-
-  // Following block of codes confirms what characters user wants to include in password
- 
-  
   // for loop that chooses random characters in the arrays user chose
   for (var i =0; i < userLength; ++i) {
     var index = Math.floor(Math.random() * userInput.length);
