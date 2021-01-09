@@ -10,6 +10,6 @@ For the application I've created a simple webpage with a single generate passwor
 * Include uppercase letters
 * Include lowercase letters
 * Include numbers
-* Include special characters  
+* Include special characters <br> 
 There are validation checks to ensure a valid number between 8 and 128 and that the user confirms at least one character type.
 When user confirms all criteria, a random password will be generated and will show up in the box.
