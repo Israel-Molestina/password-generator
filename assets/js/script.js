@@ -15,7 +15,6 @@ var userInput = [];
 
 function generatePassword() {
   
-  var userPassword = "";
   // Asks what length user wants the passwords and adds to userInput
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
 
@@ -55,6 +54,9 @@ function generatePassword() {
       return userPassword = ""
     }
   }
+
+  // variable that holds the generated password
+  var userPassword = "";
 
   // for loop that chooses random characters in the arrays user chose
   for (var i =0; i < userLength; i++) {
