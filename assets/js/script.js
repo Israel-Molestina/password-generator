@@ -64,6 +64,8 @@ function generatePassword() {
     console.log(userPassword);
   }
 
+  document.getElementById("#password").textContent = "";
+
   return userPassword;
 
 }
