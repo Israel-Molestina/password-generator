@@ -12,10 +12,10 @@ var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "
 
 var userInput = [];
 
-var userPassword = "";
 
 function generatePassword() {
-
+  
+  var userPassword = "";
   // Asks what length user wants the passwords and adds to userInput
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
 
@@ -63,8 +63,6 @@ function generatePassword() {
 
     console.log(userPassword);
   }
-
-  document.getElementById("#password").textContent = "";
 
   return userPassword;
 
