@@ -15,6 +15,7 @@ For the application I've created a simple webpage with a single generate passwor
 There are validation checks to ensure a valid number between 8 and 128 and that the user confirms at least one character type.
 When user confirms all criteria, a random password will be generated and will show up in the box.  
 <br>
+<br>
 I used very simple HTML and CSS files with all the functionality of the webpage coming from the JavaScript file.
 
 ## Below I've included a link to the finished application along with a screenshot of the page
