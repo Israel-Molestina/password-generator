@@ -19,5 +19,8 @@ When user confirms all criteria, a random password will be generated and will sh
 
 ### [Password Generator](https://israel-molestina.github.io/password-generator/)
 
+## Password Generator Webpage
+![screengrap of webpage](assets/pics/webpage-screenshot.png)
+
 
 
