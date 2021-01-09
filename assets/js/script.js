@@ -61,7 +61,7 @@ function generatePassword() {
     var index = Math.floor(Math.random() * userInput.length);
     userPassword += userInput[index] + "";
 
-    console.log(userPassword)
+    console.log(userPassword);
   }
 
   return userPassword;
@@ -72,7 +72,7 @@ function generatePassword() {
 function writePassword() {
 
   var password = generatePassword();
-  
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
