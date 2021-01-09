@@ -3,28 +3,31 @@ var generateBtn = document.querySelector("#generate");
 
 // Arrays for each option user can choos for thier password
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
 var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", ";", "<", ">", "?", "/"];
+
 var userInput = [];
+
 var userPassword = "";
 
 function generatePassword() {
 
   // Asks what length user wants the passwords and adds to userInput
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
+
   var userLePar = parseInt(userLength);
+
   // Validates user response is less than more than 8 and less than 128
   if (Number.isNaN(userLePar) || userLength < 8 || userLength > 128) {
     alert("I said number between 8 and 128")
-    return userPassword
+    return userPassword = ""
   }
-  /*
-  else if  (Number.isNaN(userLePar)) {
-    var userLength = prompt("Please choose a number between 8 and 128");
-  }
-  */
- // Following block of codes confirms what characters user wants to include in password
+ 
+  // Following block of codes confirms what characters user wants to include in password
   else {
     var userInputUpper = confirm("Would you like your password to contain upper case letter?");
     if (userInputUpper) {
@@ -49,7 +52,7 @@ function generatePassword() {
     // Validates that user chose at least one character
     if (userInputUpper === false && userInputLower === false && userInputNum === false && userInputSpec === false) {
       alert("must choose at least one character type")
-      return userPassword
+      return userPassword = ""
     }
   }
 
