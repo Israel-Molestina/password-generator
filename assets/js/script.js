@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Arrays for each option user can choos for thier password
+// Arrays for each option user can choose for their password
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -26,7 +26,7 @@ function generatePassword() {
     return userPassword = ""
   }
  
-  // Following block of codes confirms what characters user wants to include in password, and if confirms concatanates it to the variable userInput
+  // Following block of codes confirms what characters user wants to include in password, and if confirms concatenates it to the variable userInput
   else {
     var userInputUpper = confirm("Would you like your password to contain upper case letter?");
     if (userInputUpper) {
@@ -84,5 +84,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
