@@ -10,6 +10,7 @@ var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", ";", "<", ">", "?", "/"];
 
+// Holds the character types that user chooses to include
 var userInput = [];
 
 
@@ -20,44 +21,62 @@ function generatePassword() {
 
   console.log(userLength);
 
+  // Turns userLength into an integer so we can run a validation check to see if it is a valid number
   var userLePar = parseInt(userLength);
 
   // Validates user response is less than more than 8 and less than 128
   if (Number.isNaN(userLePar) || userLength < 8 || userLength > 128) {
+
     alert("I said number between 8 and 128")
     return userPassword = "";
+
   }
  
   // Following block of codes confirms what characters user wants to include in password, and if confirms concatenates it to the variable userInput
   else {
+
     var userInputUpper = confirm("Would you like your password to contain upper case letter?");
+
     if (userInputUpper) {
+
       userInput = userInput.concat(upperCase);
       console.log(userInputUpper);
+
     }
   
     var userInputLower = confirm("Would you like your password to contain lower case letters?");
+
     if (userInputLower) {
+
       userInput = userInput.concat(lowerCase);
       console.log(userInputLower);
+      
     }
   
     var userInputNum = confirm("Would you like your password to contain numbers?");
+
     if (userInputNum) {
+
       userInput = userInput.concat(numeric);
       console.log(userInputNum);
+      
     }
   
     var userInputSpec = confirm("Would you like your password to contain special characters?");
+
     if (userInputSpec) {
+
       userInput = userInput.concat(specialChar);
       console.log(userInputSpec);
+
     }
   
     // Validates that user chose at least one character type
     if (userInputUpper === false && userInputLower === false && userInputNum === false && userInputSpec === false) {
+
       alert("must choose at least one character type")
       return userPassword = ""
+
     }
   }
 
@@ -66,6 +85,7 @@ function generatePassword() {
 
   // for loop that chooses random characters in the arrays user chose
   for (var i =0; i < userLength; i++) {
+    
     var index = Math.floor(Math.random() * userInput.length);
     userPassword += userInput[index] + "";
 
