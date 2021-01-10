@@ -18,12 +18,14 @@ function generatePassword() {
   // Asks what length user wants the passwords and adds to userInput
   var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
 
+  console.log(userLength);
+
   var userLePar = parseInt(userLength);
 
   // Validates user response is less than more than 8 and less than 128
   if (Number.isNaN(userLePar) || userLength < 8 || userLength > 128) {
     alert("I said number between 8 and 128")
-    return userPassword = ""
+    return userPassword = "";
   }
  
   // Following block of codes confirms what characters user wants to include in password, and if confirms concatenates it to the variable userInput
@@ -31,21 +33,25 @@ function generatePassword() {
     var userInputUpper = confirm("Would you like your password to contain upper case letter?");
     if (userInputUpper) {
       userInput = userInput.concat(upperCase);
+      console.log(userInputUpper);
     }
   
     var userInputLower = confirm("Would you like your password to contain lower case letters?");
     if (userInputLower) {
       userInput = userInput.concat(lowerCase);
+      console.log(userInputLower);
     }
   
     var userInputNum = confirm("Would you like your password to contain numbers?");
     if (userInputNum) {
       userInput = userInput.concat(numeric);
+      console.log(userInputNum);
     }
   
     var userInputSpec = confirm("Would you like your password to contain special characters?");
     if (userInputSpec) {
       userInput = userInput.concat(specialChar);
+      console.log(userInputSpec);
     }
   
     // Validates that user chose at least one character type
