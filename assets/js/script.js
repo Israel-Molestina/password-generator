@@ -24,7 +24,7 @@ function generatePassword() {
   // Turns userLength into an integer so we can run a validation check to see if it is a valid number
   var userLePar = parseInt(userLength);
 
-  // validates if user presses cancle will alert a different message then if user inputs invalid number
+  // Validation to check if user presses cancel. Will alert a different message then if user inputs invalid number
   if (userLength === null) {
 
     alert("must enter valid number and press ok to continue")
@@ -32,10 +32,10 @@ function generatePassword() {
 
   }
 
-  // Validates user response is less than more than 8 and less than 128
+  // Validation check to make sure user input is a valid number and between 8 and 128
   else if (Number.isNaN(userLePar) || userLength < 8 || userLength > 128) {
 
-    alert("I said number between 8 and 128")
+    alert("I said NUMBER between 8 and 128")
     return userPassword = "";
 
   }
