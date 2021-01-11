@@ -17,7 +17,7 @@ var userInput = [];
 function generatePassword() {
   
   // Asks what length user wants the passwords and adds to userInput
-  var userLength = prompt("Please choose desired length of your password (must be between 8 and 128)");
+  var userLength = prompt("Please choose desired length of your password (must be between 8 and 128).");
 
   console.log(userLength);
 
@@ -27,7 +27,7 @@ function generatePassword() {
   // Validates user response is less than more than 8 and less than 128
   if (Number.isNaN(userLePar) || userLength < 8 || userLength > 128) {
 
-    alert("I said number between 8 and 128")
+    alert("I said number between 8 and 128.")
     return userPassword = "";
 
   }
