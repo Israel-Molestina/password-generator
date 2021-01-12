@@ -161,6 +161,3 @@ function generatePassword() {
   return userPassword;
 
 }
-
-
-
