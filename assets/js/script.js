@@ -157,7 +157,51 @@ function generatePassword() {
     console.log(userPassword);
   }
 
-  // Returns user generated password
+  // Following functions shuffle password
+  // Function to turn password into an array so I can shuffle it 
+  function passwordArray() {
+
+    var password = userPassword;
+    
+    var array = password.split("");
+    
+    console.log(array);
+
+    return array;
+    
+  }
+
+  // Shuffles password
+  function shufflePassword(passwordArr) {
+
+    var passwordArr = passwordArray();
+
+    var currentIndex = passwordArr.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = passwordArr[currentIndex];
+      passwordArr[currentIndex] = passwordArr[randomIndex];
+      passwordArr[randomIndex] = temporaryValue;
+
+    }
+
+    console.log(passwordArr);
+
+    return passwordArr;
+
+  }
+
+  var newPass = shufflePassword(passwordArray);
+
+  // turns password back into a string
+  userPassword = newPass.join("");
+
+  console.log(userPassword);
+
   return userPassword;
 
 }
